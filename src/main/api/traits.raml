@@ -1,0 +1,35 @@
+- secured:
+    description: All requests require authenticated user
+    headers:    
+      Authorization:
+        description: The client id and client secret should be passed as follows for all endpoints in the following format
+        type: string
+        repeat: false
+        example: "AT df605fa22f004cba922acdddfe1ea484:d5cf4b7475d648a6b888ea0f7193e1Af"  
+        required: false
+- common_errors:
+    responses:
+      400:
+        body:
+          application/json:
+            example: !include common/common_400.example
+      404:
+        body:
+          application/json:
+            example: !include common/common_404.example
+      405:
+        body:
+          application/json:
+            example: !include common/common_405.example
+      408:
+        body:
+          application/json:
+            example: !include common/common_408.example
+      415:
+        body:
+          application/json:
+            example: !include common/common_415.example
+      500:
+        body:
+          application/json:
+            example: !include common/common_500.example

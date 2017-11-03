@@ -1,0 +1,56 @@
+#%RAML 0.8
+title: Sys Store Acme Travel API
+version: "v1"
+traits: !include ./traits.raml
+
+/flights: 
+    is: [secured, common_errors]     
+    get:
+      queryParameters: 
+        day:
+          example: 2017-03-15
+          type: string
+          required: true
+          pattern : ^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$
+      responses: 
+        "200": 
+          body: 
+              application/json: 
+                  example: !include examples/get_flights/response.json
+/flight: 
+    /{flightId}:
+      uriParameters: 
+        flightId: 
+          example: "AN001"
+      is: [secured, common_errors]
+      put: 
+          body: 
+              application/json: 
+                  example: !include ./examples/flight/put.json
+                  schema: !include schemas/flight_put.json
+   
+          responses: 
+              "200": 
+/destination:               
+        get:
+          queryParameters: 
+            airline:
+              example: iugini
+              type: string
+              required: true
+            records-per-page:
+              example: 10
+              type: integer
+              required: false
+              default: 10
+            page:
+              example: 1
+              type: integer
+              required: false
+              default: 1
+          responses: 
+            "200": 
+              body: 
+                  application/json: 
+                      example: !include examples/get_destinations/response.json
+    

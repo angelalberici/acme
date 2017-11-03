@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting" xmlns:validation="http://www.mulesoft.org/schema/mule/validation" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/validation http://www.mulesoft.org/schema/mule/validation/current/mule-validation.xsd
+http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd">
+    <validation:config name="Validation_Configuration" doc:name="Validation Configuration"/>
+    <sub-flow name="GetDestinationByAirline-SubFlow">
+        <set-variable variableName="airline" value="%#[message.inboundProperties['http.query.params'].airline]%" doc:name="airline var"/>
+        <dw:transform-message doc:name="Pagination Payload">
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/java
+---
+'LIMIT ' ++
+inboundProperties."http.query.params".page * inboundProperties."http.query.params".records-per-page 
+ ++ ',' ++ 
+inboundProperties."http.query.params".records-per-page
+]]></dw:set-payload>
+        </dw:transform-message>
+
+        <scripting:component doc:name="Negative page or records">
+            <scripting:script engine="Groovy"><![CDATA[if( payload.contains('-') )
+throw new org.mule.module.apikit.exception.BadRequestException('')
+else 
+return payload]]></scripting:script>
+        </scripting:component>
+        <db:select config-ref="MySQL_AcmeTravel_Conf" doc:name="GetDestinationByAirline-DB">
+            <db:dynamic-query><![CDATA[SELECT
+	airp.Country as country,
+	airp.City as city,
+	airp.Name as airport
+FROM
+	airlines_sandbox.routes rout, airlines_sandbox.airlines airl, airlines_sandbox.airports as airp
+	where rout.Airline_ID = airl.Airline_ID 
+	and rout.Destination_Airport_ID = airp.Airport_ID 
+	and airl.Name like '#[flowVars.airline]'
+	order by airp.Country
+	#[payload]]]></db:dynamic-query>
+        </db:select>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <choice doc:name="Choice">
+            <when expression="!payload.equals('[]') &amp;&amp; payload  != null">
+                <set-property propertyName="http.status" value="#[200]" doc:name="Property"/>
+            </when>
+            <otherwise>
+                <set-property propertyName="http.status" value="#[404]" doc:name="Property"/>
+                <set-payload value="#[null]" doc:name="Set Payload"/>
+            </otherwise>
+        </choice>
+    </sub-flow>
+</mule>

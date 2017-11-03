@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:mock="http://www.mulesoft.org/schema/mule/mock" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/mock http://www.mulesoft.org/schema/mule/mock/current/mule-mock.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
+http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd">
+    <munit:config name="munit" doc:name="MUnit configuration" mock-connectors="false" mock-inbounds="false"/>
+    <spring:beans>
+        <spring:import resource="classpath:destination.xml"/>
+        <spring:import resource="classpath:api.xml"/>
+        <spring:import resource="classpath:config.xml"/>
+        <spring:import resource="classpath:flights.xml"/>
+        <spring:import resource="classpath:flight.xml"/>
+    </spring:beans>
+    <munit:test name="GetDestination-Success" description="Test" ignore="true">
+        <mock:when messageProcessor="db:select" doc:name="GetDestination-DB-Mock">
+            <mock:with-attributes>
+                <mock:with-attribute name="doc:name" whereValue="#['GetDestinationByAirline-DB']"/>
+            </mock:with-attributes>
+            <mock:then-return payload="#[[getResource('get-destination/response.json').asString().replaceAll('\\s+','')]] " mimeType="application/json"/>
+        </mock:when>
+        <munit:set payload="#[payload]" doc:name="Set HTTP query params">
+            <munit:inbound-properties>
+                <munit:inbound-property key="http.query.params" value="#[['airline': 'iugini' , 'records-per-page' : 10 , 'page' :1] ]"/>
+            </munit:inbound-properties>
+        </munit:set>
+        <flow-ref name="get:/destination:api-config" doc:name="get:/destination:api-config"/>
+        <dw:transform-message doc:name="Transform Message">
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/java
+---
+payload]]></dw:set-payload>
+        </dw:transform-message>
+        <set-payload value="#[payload.replaceAll('\\s+','')]" doc:name="Payload - Delete blank spaces and line breaks"/>
+        <munit:assert-payload-equals message="Test failure message: Expected payload did not come through" expectedValue="#[getResource('get-destination/db-response.json').asString().replaceAll('\\s+','')]" doc:name="Assert Payload"/>
+        <munit:assert-true condition="#[message.outboundProperties['http.status']==200]" doc:name="Status is 200"/>
+    </munit:test>
+    <munit:test name="GetDestination-404NoResults" description="Test">
+        <mock:when messageProcessor="db:select" doc:name="GetDestination-DB-Mock">
+            <mock:with-attributes>
+                <mock:with-attribute name="doc:name" whereValue="#['GetDestinationByAirline-DB']"/>
+            </mock:with-attributes>
+            <mock:then-return payload="#[[]]" mimeType="application/json"/>
+        </mock:when>
+        <munit:set payload="#[payload]" doc:name="Set HTTP query params">
+            <munit:inbound-properties>
+                <munit:inbound-property key="http.query.params" value="#[['airline': 'iugini' , 'records-per-page' : 10 , 'page' :1] ]"/>
+            </munit:inbound-properties>
+        </munit:set>
+        <flow-ref name="get:/destination:api-config" doc:name="get:/destination:api-config"/>
+        <munit:assert-payload-equals expectedValue="#[payload==null]" doc:name="Payload is null"/>
+        <munit:assert-true condition="#[message.outboundProperties['http.status']==404]" doc:name="Status is 404"/>
+    </munit:test>
+</mule>
