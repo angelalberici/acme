@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "properties": {
+    "seats_availability": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "flight-code": {
+      "type": "string"
+    },
+    "airline": {
+      "type": "string"
+    },
+    "departure-aiport": {
+      "type": "string"
+    },
+    "destination-airport": {
+      "type": "string"
+    },
+    "aircraft-model": {
+      "type": "string"
+    },
+    "seats_availability": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "price": {
+      "type": "number",
+      "minimum": 0
+    },
+    "departure-date": {
+      "type": "string",
+      "format": "string",
+	  "pattern" : "^[0-9]{4}-[0-1]{1}[0-9]{1}-[0-3]{1}[0-9]{1} [0-2]{1}[0-9]{1}:[0-6]{1}[0-9]{1}:[0-6]{1}[0-9]{1}(,)*$"    
+      
+    }
+  },
+    "required": [
+				"flight-code",
+              "airline",
+              "departure-aiport",
+              "destination-airport",
+              "departure-date",
+              "aircraft-model",
+              "seat-availability",
+              "price"
+			]
+}

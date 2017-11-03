@@ -144,6 +144,32 @@ return payload;
 ]]></expression-component>
             <flow-ref name="global-prepare-error-response-sub-flow" doc:name="Prepare Error Response"/>
         </catch-exception-strategy>
+                <catch-exception-strategy when="#[exception.causedBy(org.mule.api.MessagingException)]" doc:name="Caused by org.mule.api.MessagingException)">
+            <expression-component doc:name="Set Error Info"><![CDATA[if (flowVars.httpStatus == null || flowVars.httpStatus == '') {
+	message.outboundProperties['http.status'] = "500";
+} else {
+	message.outboundProperties['http.status'] = flowVars.httpStatus;
+}
+
+if (flowVars.errorMessage == null || flowVars.errorMessage == '') {
+	flowVars.errorMessage = "Unable to fullfil request due to internal error.";
+}
+
+if (flowVars.errorDescription == null || flowVars.errorDescription == '') {
+	flowVars.errorDescription = null;
+}
+
+if (flowVars.errorCode == null || flowVars.errorCode == '') {
+	payload = app.registry.statuses.get(message.outboundProperties['http.status']);
+} else {
+	payload = flowVars.errorCode;
+}
+
+return payload;
+]]></expression-component>
+            <set-variable variableName="errorMessage" value="Flight with provided Flight Code and Date already exists" doc:name="Set Error Message"/>
+            <flow-ref name="global-prepare-error-response-sub-flow" doc:name="Prepare Error Response"/>
+        </catch-exception-strategy>
         <catch-exception-strategy doc:name="Default">
             <set-variable variableName="errorMessage" value="Unable to fullfil request due to internal error." doc:name="Set Error Message"/>
             <flow-ref name="global-internal-server-error-response-sub-flow" doc:name="Internal Server Response"/>

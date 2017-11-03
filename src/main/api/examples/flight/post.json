@@ -1,0 +1,10 @@
+{
+		"flight-code" : "AN001",
+        "airline": "British Airways",
+        "departure-aiport": "SYD",
+        "desitnation-airport": "CHC",
+        "departure-date" : "2017-03-15 08:45:00",
+        "aircraft-model" : "model",
+        "seat-availability" :  "",
+        "price" : 500
+}

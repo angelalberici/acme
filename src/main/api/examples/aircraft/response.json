@@ -1,0 +1,47 @@
+[
+    {
+        "icao": "A343",
+        "iata": "343",
+        "model": "Airbus A340-300"
+    },
+    {
+        "icao": "A345",
+        "iata": "345",
+        "model": "Airbus A340-500"
+    },
+    {
+        "icao": "A346",
+        "iata": "346",
+        "model": "Airbus A340-600"
+    },
+    {
+        "icao": "A358",
+        "iata": "358",
+        "model": "Airbus A350-800"
+    },
+    {
+        "icao": "A359",
+        "iata": "359",
+        "model": "Airbus A350-900"
+    },
+    {
+        "icao": "A35K",
+        "iata": "351",
+        "model": "Airbus A350-1000"
+    },
+    {
+        "icao": "A388",
+        "iata": "388",
+        "model": "Airbus A380-800"
+    },
+    {
+        "icao": "A3ST",
+        "iata": "ABB",
+        "model": "Airbus A300-600ST Beluga Freighter"
+    },
+    {
+        "icao": "A330",
+        "iata": "330",
+        "model": "Airbus A330 all models"
+    }
+]

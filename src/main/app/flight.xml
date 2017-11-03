@@ -56,4 +56,26 @@ WHERE Flight_Code = '#[message.inboundProperties['http.uri.params'].flightId]' A
         </choice>
 
     </sub-flow>
+    <sub-flow name="CreateFlight-SubFlow">
+        <dw:transform-message doc:name="Transform Message">
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/java
+---
+payload]]></dw:set-payload>
+        </dw:transform-message>
+        <logger message="[CreateFlight-SubFlow] - INSERT INTO airlines_sandbox.flights_a_alberici(Flight_Code, Airline_Name, Departure_Airport, Destination_Airport, Departure_Date, Aircraft_Type, Seat_Availability, Price) VALUES (#[payload.'flight-code'],       #[payload.airline],       #[payload.'departure-aiport'],       #[payload.'desitnation-airport'],       #[payload.'departure-date'],       #[payload.'aircraft-model'],       #[payload.'seat-availability'],       #[payload.price]);" level="INFO" doc:name="DB Create"/>
+        <db:insert config-ref="MySQL_AcmeTravel_Conf" doc:name="UpdateFlight-DB">
+            <db:parameterized-query><![CDATA[INSERT INTO airlines_sandbox.flights_a_alberici(Flight_Code, Airline_Name, Departure_Airport, Destination_Airport, Departure_Date, Aircraft_Type, Seat_Availability, Price) 
+VALUES (#[payload.'flight-code'],       #[payload.airline],       #[payload.'departure-aiport'],       #[payload.'destination-airport'],       #[payload.'departure-date'],       #[payload.'aircraft-model'],       #[payload.'seat-availability'],       #[payload.price])]]></db:parameterized-query>
+        </db:insert>
+        <choice doc:name="Choice">
+            <when expression="payload &gt; 0">
+                <set-property propertyName="http.status" value="#[204]" doc:name="Property"/>
+            </when>
+            <otherwise>
+                <set-property propertyName="http.status" value="#[404]" doc:name="Property"/>
+                <set-payload value="#[null]" doc:name="Set Payload"/>
+            </otherwise>
+        </choice>
+    </sub-flow>
 </mule>

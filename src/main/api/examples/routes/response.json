@@ -1,0 +1,502 @@
+[
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "XNN",
+        "departure-airport-code": "CTU"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "UYN",
+        "departure-airport-code": "CTU"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "JJN",
+        "departure-airport-code": "CTU"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "WUX",
+        "departure-airport-code": "CTU"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "WNZ",
+        "departure-airport-code": "CTU"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "YIW",
+        "departure-airport-code": "CTU"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "BPX",
+        "departure-airport-code": "CTU"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "LZY",
+        "departure-airport-code": "CTU"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "AKU",
+        "departure-airport-code": "CTU"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "KRL",
+        "departure-airport-code": "CTU"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "YIN",
+        "departure-airport-code": "CTU"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "YCU",
+        "departure-airport-code": "CTU"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CTU",
+        "departure-airport-code": "XIC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CTU",
+        "departure-airport-code": "KHG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "URC",
+        "departure-airport-code": "KHG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "URC",
+        "departure-airport-code": "HTN"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "PEK",
+        "departure-airport-code": "URC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CGO",
+        "departure-airport-code": "URC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "XIY",
+        "departure-airport-code": "URC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CKG",
+        "departure-airport-code": "URC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CTU",
+        "departure-airport-code": "URC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "KHG",
+        "departure-airport-code": "URC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "HTN",
+        "departure-airport-code": "URC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "YCU",
+        "departure-airport-code": "URC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "PEK",
+        "departure-airport-code": "HRB"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "TSN",
+        "departure-airport-code": "HRB"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "TYN",
+        "departure-airport-code": "HRB"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CAN",
+        "departure-airport-code": "HRB"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "SZX",
+        "departure-airport-code": "HRB"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CGO",
+        "departure-airport-code": "HRB"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "XIY",
+        "departure-airport-code": "HRB"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "YNT",
+        "departure-airport-code": "HRB"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CTU",
+        "departure-airport-code": "HRB"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "DLC",
+        "departure-airport-code": "HRB"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "TNA",
+        "departure-airport-code": "HRB"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CZX",
+        "departure-airport-code": "HRB"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "PEK",
+        "departure-airport-code": "MDG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "PEK",
+        "departure-airport-code": "DLC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "TSN",
+        "departure-airport-code": "DLC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "TYN",
+        "departure-airport-code": "DLC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "SZX",
+        "departure-airport-code": "DLC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CGO",
+        "departure-airport-code": "DLC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "XIY",
+        "departure-airport-code": "DLC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "HGH",
+        "departure-airport-code": "DLC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "NKG",
+        "departure-airport-code": "DLC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "HRB",
+        "departure-airport-code": "DLC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "PVG",
+        "departure-airport-code": "DLC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "TNA",
+        "departure-airport-code": "DLC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "WUX",
+        "departure-airport-code": "DLC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "PEK",
+        "departure-airport-code": "PVG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CAN",
+        "departure-airport-code": "PVG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "KWL",
+        "departure-airport-code": "PVG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "SZX",
+        "departure-airport-code": "PVG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "XIY",
+        "departure-airport-code": "PVG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "KMG",
+        "departure-airport-code": "PVG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "KHN",
+        "departure-airport-code": "PVG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CKG",
+        "departure-airport-code": "PVG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "KWE",
+        "departure-airport-code": "PVG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CTU",
+        "departure-airport-code": "PVG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "DLC",
+        "departure-airport-code": "PVG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "INC",
+        "departure-airport-code": "PVG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "JZH",
+        "departure-airport-code": "PVG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "HET",
+        "departure-airport-code": "PVG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "JJN",
+        "departure-airport-code": "PVG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "WNZ",
+        "departure-airport-code": "PVG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "SZX",
+        "departure-airport-code": "BKK"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "SZX",
+        "departure-airport-code": "ICN"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "FOC",
+        "departure-airport-code": "KIX"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "WUX",
+        "departure-airport-code": "KIX"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "PEK",
+        "departure-airport-code": "SYX"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "TYN",
+        "departure-airport-code": "SYX"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "NNG",
+        "departure-airport-code": "SYX"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "SZX",
+        "departure-airport-code": "SYX"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "KWE",
+        "departure-airport-code": "SYX"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CTU",
+        "departure-airport-code": "SYX"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "WUX",
+        "departure-airport-code": "SYX"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "WNZ",
+        "departure-airport-code": "SYX"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "PEK",
+        "departure-airport-code": "LJG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "XIY",
+        "departure-airport-code": "LJG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "JHG",
+        "departure-airport-code": "LJG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "KMG",
+        "departure-airport-code": "LJG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "HGH",
+        "departure-airport-code": "LJG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CKG",
+        "departure-airport-code": "LJG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CTU",
+        "departure-airport-code": "LJG"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "PEK",
+        "departure-airport-code": "INC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "XIY",
+        "departure-airport-code": "INC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "HGH",
+        "departure-airport-code": "INC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CKG",
+        "departure-airport-code": "INC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CTU",
+        "departure-airport-code": "INC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "PVG",
+        "departure-airport-code": "INC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CGQ",
+        "departure-airport-code": "INC"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "PEK",
+        "departure-airport-code": "LXA"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CKG",
+        "departure-airport-code": "LXA"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CTU",
+        "departure-airport-code": "LXA"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CAN",
+        "departure-airport-code": "TNA"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "SZX",
+        "departure-airport-code": "TNA"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "KMG",
+        "departure-airport-code": "TNA"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "FOC",
+        "departure-airport-code": "TNA"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "CTU",
+        "departure-airport-code": "TNA"
+    },
+    {
+        "airline": "Shenzhen Airlines",
+        "departure-aiport": "HRB",
+        "departure-airport-code": "TNA"
+    }
+]

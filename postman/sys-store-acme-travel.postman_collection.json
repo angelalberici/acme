@@ -1,0 +1,1316 @@
+{
+	"info": {
+		"name": "sys-store-acme-travel",
+		"_postman_id": "96db2744-aad8-7e13-b5fa-856a7676f564",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/flights",
+			"description": "",
+			"item": [
+				{
+					"name": "GET",
+					"description": "",
+					"item": [
+						{
+							"name": "Success",
+							"description": "",
+							"item": [
+								{
+									"name": "?day=2017-03-15",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flights?day=2017-03-15",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"flights"
+											],
+											"query": [
+												{
+													"key": "day",
+													"value": "2017-03-15",
+													"equals": true
+												}
+											]
+										},
+										"description": ""
+									},
+									"response": [
+										{
+											"id": "6fc88ea2-6bc6-44a6-a7fb-c153fe8157e6",
+											"name": "?day=2017-03-15",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {},
+												"url": {
+													"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flights?day=2017-03-15",
+													"host": [
+														"{{acme-travel.url}}"
+													],
+													"path": [
+														"sys",
+														"{{acme-travel.version}}",
+														"acme-travel",
+														"api",
+														"flights"
+													],
+													"query": [
+														{
+															"key": "day",
+															"value": "2017-03-15",
+															"equals": true
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"_postman_previewtype": "text",
+											"header": [
+												{
+													"key": "Content-Length",
+													"value": "1903",
+													"name": "Content-Length",
+													"description": "The length of the response body in octets (8-bit bytes)"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"name": "Content-Type",
+													"description": "The mime type of this content"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 03 Nov 2017 16:18:20 GMT",
+													"name": "Date",
+													"description": "The date and time that the message was sent"
+												}
+											],
+											"cookie": [],
+											"responseTime": 2390,
+											"body": "[{\"airline_name\":\"British Airways\",\"price\":1400.00,\"destination_airport\":\"LCY\",\"flight_code\":\"BA001\",\"departure_date\":\"2017-03-15\",\"seat_availability\":32,\"aircraft_type\":\"Airbus A318\",\"departure_airport\":\"JFK\"},{\"airline_name\":\"British Airways\",\"price\":452.18,\"destination_airport\":\"JFK\",\"flight_code\":\"BA105\",\"departure_date\":\"2017-03-15\",\"seat_availability\":463,\"aircraft_type\":\"Boeing 747-400\",\"departure_airport\":\"LHR\"},{\"airline_name\":\"British Airways\",\"price\":452.18,\"destination_airport\":\"SFO\",\"flight_code\":\"BA285\",\"departure_date\":\"2017-03-15\",\"seat_availability\":635,\"aircraft_type\":\"Boeing 747-400\",\"departure_airport\":\"LHR\"},{\"airline_name\":\"Emirates\",\"price\":400.00,\"destination_airport\":\"CHC\",\"flight_code\":\"EK412\",\"departure_date\":\"2017-03-15\",\"seat_availability\":360,\"aircraft_type\":\"Boeing 777-300ER\",\"departure_airport\":\"SYD\"},{\"airline_name\":\"Ryanair\",\"price\":44.20,\"destination_airport\":\"LTN\",\"flight_code\":\"FR3883\",\"departure_date\":\"2017-03-15\",\"seat_availability\":189,\"aircraft_type\":\"Boeing 737-800\",\"departure_airport\":\"MLA\"},{\"airline_name\":\"Air Malta\",\"price\":129.00,\"destination_airport\":\"LGW\",\"flight_code\":\"KM116\",\"departure_date\":\"2017-03-15\",\"seat_availability\":123,\"aircraft_type\":\"Airbus A319\",\"departure_airport\":\"MLA\"},{\"airline_name\":\"KLM Royal Dutch Airlines\",\"price\":685.00,\"destination_airport\":\"LOS\",\"flight_code\":\"KM587\",\"departure_date\":\"2017-03-15\",\"seat_availability\":333,\"aircraft_type\":\"Airbus A330 all models\",\"departure_airport\":\"AMS\"},{\"airline_name\":\"Lufthansa\",\"price\":197.00,\"destination_airport\":\"FRA\",\"flight_code\":\"LH963\",\"departure_date\":\"2017-03-15\",\"seat_availability\":144,\"aircraft_type\":\"Airbus A320\",\"departure_airport\":\"EDI\"},{\"airline_name\":\"Turkish Airlines\",\"price\":308.60,\"destination_airport\":\"LGW\",\"flight_code\":\"TK1981\",\"departure_date\":\"2017-03-15\",\"seat_availability\":215,\"aircraft_type\":\"Boeing 737-900\",\"departure_airport\":\"IST\"}]"
+										}
+									]
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Failure",
+							"description": "",
+							"item": [
+								{
+									"name": "Not found",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flights?day=2010-03-15",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"flights"
+											],
+											"query": [
+												{
+													"key": "day",
+													"value": "2010-03-15",
+													"equals": true
+												}
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "Not a date",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flights?day=123",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"flights"
+											],
+											"query": [
+												{
+													"key": "day",
+													"value": "123",
+													"equals": true
+												}
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "Not a date and special characters",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flights?day=!2010-03-15",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"flights"
+											],
+											"query": [
+												{
+													"key": "day",
+													"value": "!2010-03-15",
+													"equals": true
+												}
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "/destination",
+			"description": "",
+			"item": [
+				{
+					"name": "GET",
+					"description": "",
+					"item": [
+						{
+							"name": "Success",
+							"description": "",
+							"item": [
+								{
+									"name": "?airline=iugini&records-per-page=10&page=1",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/destination?airline=iugini&records-per-page=10&page=1",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"destination"
+											],
+											"query": [
+												{
+													"key": "airline",
+													"value": "iugini",
+													"equals": true
+												},
+												{
+													"key": "records-per-page",
+													"value": "10",
+													"equals": true
+												},
+												{
+													"key": "page",
+													"value": "1",
+													"equals": true
+												}
+											]
+										},
+										"description": ""
+									},
+									"response": [
+										{
+											"id": "cf9ab8da-98c0-43eb-b546-0165ea77f6fc",
+											"name": "?airline=iugini&records-per-page=10&page=1",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {},
+												"url": {
+													"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/destination?airline=iugini&records-per-page=10&page=1",
+													"host": [
+														"{{acme-travel.url}}"
+													],
+													"path": [
+														"sys",
+														"{{acme-travel.version}}",
+														"acme-travel",
+														"api",
+														"destination"
+													],
+													"query": [
+														{
+															"key": "airline",
+															"value": "iugini",
+															"equals": true
+														},
+														{
+															"key": "records-per-page",
+															"value": "10",
+															"equals": true
+														},
+														{
+															"key": "page",
+															"value": "1",
+															"equals": true
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"_postman_previewtype": "text",
+											"header": [
+												{
+													"key": "Content-Length",
+													"value": "833",
+													"name": "Content-Length",
+													"description": "The length of the response body in octets (8-bit bytes)"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json;charset=UTF-8",
+													"name": "Content-Type",
+													"description": "The mime type of this content"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 03 Nov 2017 16:18:41 GMT",
+													"name": "Date",
+													"description": "The date and time that the message was sent"
+												}
+											],
+											"cookie": [],
+											"responseTime": 2069,
+											"body": "[{\"country\":\"Papua New Guinea\",\"airport\":\"Madang Airport\",\"city\":\"Madang\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Madang Airport\",\"city\":\"Madang\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Madang Airport\",\"city\":\"Madang\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Madang Airport\",\"city\":\"Madang\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Mount Hagen Kagamuga Airport\",\"city\":\"Mount Hagen\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Mount Hagen Kagamuga Airport\",\"city\":\"Mount Hagen\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Mount Hagen Kagamuga Airport\",\"city\":\"Mount Hagen\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Nadzab Airport\",\"city\":\"Nadzab\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Nadzab Airport\",\"city\":\"Nadzab\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Port Moresby Jacksons International Airport\",\"city\":\"Port Moresby\"}]"
+										}
+									]
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Failure",
+							"description": "",
+							"item": [
+								{
+									"name": "Not found (page 99999)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/destination?airline=iugini&records-per-page=10&page=9999999",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"destination"
+											],
+											"query": [
+												{
+													"key": "airline",
+													"value": "iugini",
+													"equals": true
+												},
+												{
+													"key": "records-per-page",
+													"value": "10",
+													"equals": true
+												},
+												{
+													"key": "page",
+													"value": "9999999",
+													"equals": true
+												}
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "Not found (airline unknown)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/destination?airline=unknown&records-per-page=10&page=1",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"destination"
+											],
+											"query": [
+												{
+													"key": "airline",
+													"value": "unknown",
+													"equals": true
+												},
+												{
+													"key": "records-per-page",
+													"value": "10",
+													"equals": true
+												},
+												{
+													"key": "page",
+													"value": "1",
+													"equals": true
+												}
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "records-per-page (character)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/destination?airline=iugini&records-per-page=a&page=1",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"destination"
+											],
+											"query": [
+												{
+													"key": "airline",
+													"value": "iugini",
+													"equals": true
+												},
+												{
+													"key": "records-per-page",
+													"value": "a",
+													"equals": true
+												},
+												{
+													"key": "page",
+													"value": "1",
+													"equals": true
+												}
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "records-per-page (negative number)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/destination?airline=iugini&records-per-page=1&page=1",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"destination"
+											],
+											"query": [
+												{
+													"key": "airline",
+													"value": "iugini",
+													"equals": true
+												},
+												{
+													"key": "records-per-page",
+													"value": "1",
+													"equals": true
+												},
+												{
+													"key": "page",
+													"value": "1",
+													"equals": true
+												}
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "page (character)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/destination?airline=iugini&records-per-page=1&page=a",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"destination"
+											],
+											"query": [
+												{
+													"key": "airline",
+													"value": "iugini",
+													"equals": true
+												},
+												{
+													"key": "records-per-page",
+													"value": "1",
+													"equals": true
+												},
+												{
+													"key": "page",
+													"value": "a",
+													"equals": true
+												}
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "page (negative number)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/destination?airline=iugini&records-per-page=1&page=-1",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"destination"
+											],
+											"query": [
+												{
+													"key": "airline",
+													"value": "iugini",
+													"equals": true
+												},
+												{
+													"key": "records-per-page",
+													"value": "1",
+													"equals": true
+												},
+												{
+													"key": "page",
+													"value": "-1",
+													"equals": true
+												}
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "/flight",
+			"description": "",
+			"item": [
+				{
+					"name": "PUT",
+					"description": "",
+					"item": [
+						{
+							"name": "Success",
+							"description": "",
+							"item": [
+								{
+									"name": "price - seats",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"date\" : \"2020-03-15 20:30:00\",\r\n\t\"seats_availability\" : 92,\r\n\t\"price\": 991\r\n}"
+										},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flight/AN001",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"flight",
+												"AN001"
+											]
+										},
+										"description": ""
+									},
+									"response": [
+										{
+											"id": "822b7af5-4296-494f-8fb9-5f8471a038cc",
+											"name": "price - seats",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n\t\"date\" : \"2020-03-15 20:30:00\",\r\n\t\"seats_availability\" : 92,\r\n\t\"price\": 991\r\n}"
+												},
+												"url": {
+													"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flight/AN001",
+													"host": [
+														"{{acme-travel.url}}"
+													],
+													"path": [
+														"sys",
+														"{{acme-travel.version}}",
+														"acme-travel",
+														"api",
+														"flight",
+														"AN001"
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "plain",
+											"_postman_previewtype": "text",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 03 Nov 2017 16:18:58 GMT",
+													"name": "Date",
+													"description": "The date and time that the message was sent"
+												},
+												{
+													"key": "MULE_ENCODING",
+													"value": "windows-1252",
+													"name": "MULE_ENCODING",
+													"description": "Custom header"
+												}
+											],
+											"cookie": [],
+											"responseTime": 410,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "price without seats",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"date\" : \"2020-03-15 20:30:00\",\r\n\t\"price\": 1000.50\r\n}"
+										},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flight/AN001",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"flight",
+												"AN001"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "seats without price",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"date\" : \"2020-03-15 20:30:00\",\r\n\t\"seats_availability\" : 100\r\n}"
+										},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flight/AN001",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"flight",
+												"AN001"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Failure",
+							"description": "",
+							"item": [
+								{
+									"name": "invalid seats (negative)",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"date\" : \"2020-03-15 20:30:00\",\r\n\t\"seats_availability\" : -92,\r\n\t\"price\": 991\r\n}"
+										},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flight/AN001",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"flight",
+												"AN001"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "invalid price (negative)",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"date\" : \"2020-03-15 20:30:00\",\r\n\t\"seats_availability\" : 92,\r\n\t\"price\": -991\r\n}"
+										},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flight/AN001",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"flight",
+												"AN001"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "invalid date-time (no time)",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"date\" : \"2020-03-15\",\r\n\t\"seats_availability\" : 92,\r\n\t\"price\": 991\r\n}"
+										},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flight/AN001",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"flight",
+												"AN001"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "POST",
+					"description": "",
+					"item": [
+						{
+							"name": "Success",
+							"description": "",
+							"item": [
+								{
+									"name": "price - seats",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\t\"flight-code\" : \"AN003\",\r\n        \"airline\": \"British Airways\",\r\n        \"departure-aiport\": \"SYD\",\r\n        \"destination-airport\": \"CHC\",\r\n        \"departure-date\" : \"2017-03-15 08:45:00\",\r\n        \"aircraft-model\" : \"Boeing 737-900\",\r\n        \"seat-availability\" :  10,\r\n        \"price\" : 500\r\n}"
+										},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flight/",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"flight",
+												""
+											]
+										},
+										"description": ""
+									},
+									"response": [
+										{
+											"id": "bce38404-39df-429b-afbf-27a781af8885",
+											"name": "price - seats",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n\t\"date\" : \"2020-03-15 20:30:00\",\r\n\t\"seats_availability\" : 92,\r\n\t\"price\": 991\r\n}"
+												},
+												"url": {
+													"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flight/AN001",
+													"host": [
+														"{{acme-travel.url}}"
+													],
+													"path": [
+														"sys",
+														"{{acme-travel.version}}",
+														"acme-travel",
+														"api",
+														"flight",
+														"AN001"
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "plain",
+											"_postman_previewtype": "text",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 03 Nov 2017 16:18:58 GMT",
+													"name": "Date",
+													"description": "The date and time that the message was sent"
+												},
+												{
+													"key": "MULE_ENCODING",
+													"value": "windows-1252",
+													"name": "MULE_ENCODING",
+													"description": "Custom header"
+												}
+											],
+											"cookie": [],
+											"responseTime": 410,
+											"body": ""
+										}
+									]
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Failure",
+							"description": "",
+							"item": [
+								{
+									"name": "invalid seats (negative)",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"date\" : \"2020-03-15 20:30:00\",\r\n\t\"seats_availability\" : -92,\r\n\t\"price\": 991\r\n}"
+										},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flight/AN001",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"flight",
+												"AN001"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "invalid price (negative)",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"date\" : \"2020-03-15 20:30:00\",\r\n\t\"seats_availability\" : 92,\r\n\t\"price\": -991\r\n}"
+										},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flight/AN001",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"flight",
+												"AN001"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "invalid date-time (no time)",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"date\" : \"2020-03-15\",\r\n\t\"seats_availability\" : 92,\r\n\t\"price\": 991\r\n}"
+										},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/flight/AN001",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"flight",
+												"AN001"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "/routes",
+			"description": "",
+			"item": [
+				{
+					"name": "GET",
+					"description": "",
+					"item": [
+						{
+							"name": "Success",
+							"description": "",
+							"item": [
+								{
+									"name": "?records-per-page=100&page=5&airline=nzhe",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/routes?records-per-page=100&page=5&airline=nzhe",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"routes"
+											],
+											"query": [
+												{
+													"key": "records-per-page",
+													"value": "100",
+													"equals": true
+												},
+												{
+													"key": "page",
+													"value": "5",
+													"equals": true
+												},
+												{
+													"key": "airline",
+													"value": "nzhe",
+													"equals": true
+												}
+											]
+										},
+										"description": ""
+									},
+									"response": [
+										{
+											"id": "ad38d514-ed37-4ed9-b9fc-fa771f407607",
+											"name": "?airline=iugini&records-per-page=10&page=1",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {},
+												"url": {
+													"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/destination?airline=iugini&records-per-page=10&page=1",
+													"host": [
+														"{{acme-travel.url}}"
+													],
+													"path": [
+														"sys",
+														"{{acme-travel.version}}",
+														"acme-travel",
+														"api",
+														"destination"
+													],
+													"query": [
+														{
+															"key": "airline",
+															"value": "iugini",
+															"equals": true
+														},
+														{
+															"key": "records-per-page",
+															"value": "10",
+															"equals": true
+														},
+														{
+															"key": "page",
+															"value": "1",
+															"equals": true
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"_postman_previewtype": "text",
+											"header": [
+												{
+													"key": "Content-Length",
+													"value": "833",
+													"name": "Content-Length",
+													"description": "The length of the response body in octets (8-bit bytes)"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json;charset=UTF-8",
+													"name": "Content-Type",
+													"description": "The mime type of this content"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 03 Nov 2017 16:18:41 GMT",
+													"name": "Date",
+													"description": "The date and time that the message was sent"
+												}
+											],
+											"cookie": [],
+											"responseTime": 2069,
+											"body": "[{\"country\":\"Papua New Guinea\",\"airport\":\"Madang Airport\",\"city\":\"Madang\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Madang Airport\",\"city\":\"Madang\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Madang Airport\",\"city\":\"Madang\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Madang Airport\",\"city\":\"Madang\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Mount Hagen Kagamuga Airport\",\"city\":\"Mount Hagen\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Mount Hagen Kagamuga Airport\",\"city\":\"Mount Hagen\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Mount Hagen Kagamuga Airport\",\"city\":\"Mount Hagen\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Nadzab Airport\",\"city\":\"Nadzab\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Nadzab Airport\",\"city\":\"Nadzab\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Port Moresby Jacksons International Airport\",\"city\":\"Port Moresby\"}]"
+										}
+									]
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "/aircraft",
+			"description": "",
+			"item": [
+				{
+					"name": "GET",
+					"description": "",
+					"item": [
+						{
+							"name": "Success",
+							"description": "",
+							"item": [
+								{
+									"name": "?records-per-page=10&page=1&model=airbus",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/aircrafts?records-per-page=10&page=1&model=airbus",
+											"host": [
+												"{{acme-travel.url}}"
+											],
+											"path": [
+												"sys",
+												"{{acme-travel.version}}",
+												"acme-travel",
+												"api",
+												"aircrafts"
+											],
+											"query": [
+												{
+													"key": "records-per-page",
+													"value": "10",
+													"equals": true
+												},
+												{
+													"key": "page",
+													"value": "1",
+													"equals": true
+												},
+												{
+													"key": "model",
+													"value": "airbus",
+													"equals": true
+												}
+											]
+										},
+										"description": ""
+									},
+									"response": [
+										{
+											"id": "b7e21ad1-b454-40a8-b507-ea9a2b42133b",
+											"name": "?airline=iugini&records-per-page=10&page=1",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {},
+												"url": {
+													"raw": "{{acme-travel.url}}/sys/{{acme-travel.version}}/acme-travel/api/destination?airline=iugini&records-per-page=10&page=1",
+													"host": [
+														"{{acme-travel.url}}"
+													],
+													"path": [
+														"sys",
+														"{{acme-travel.version}}",
+														"acme-travel",
+														"api",
+														"destination"
+													],
+													"query": [
+														{
+															"key": "airline",
+															"value": "iugini",
+															"equals": true
+														},
+														{
+															"key": "records-per-page",
+															"value": "10",
+															"equals": true
+														},
+														{
+															"key": "page",
+															"value": "1",
+															"equals": true
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"_postman_previewtype": "text",
+											"header": [
+												{
+													"key": "Content-Length",
+													"value": "833",
+													"name": "Content-Length",
+													"description": "The length of the response body in octets (8-bit bytes)"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json;charset=UTF-8",
+													"name": "Content-Type",
+													"description": "The mime type of this content"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 03 Nov 2017 16:18:41 GMT",
+													"name": "Date",
+													"description": "The date and time that the message was sent"
+												}
+											],
+											"cookie": [],
+											"responseTime": 2069,
+											"body": "[{\"country\":\"Papua New Guinea\",\"airport\":\"Madang Airport\",\"city\":\"Madang\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Madang Airport\",\"city\":\"Madang\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Madang Airport\",\"city\":\"Madang\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Madang Airport\",\"city\":\"Madang\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Mount Hagen Kagamuga Airport\",\"city\":\"Mount Hagen\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Mount Hagen Kagamuga Airport\",\"city\":\"Mount Hagen\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Mount Hagen Kagamuga Airport\",\"city\":\"Mount Hagen\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Nadzab Airport\",\"city\":\"Nadzab\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Nadzab Airport\",\"city\":\"Nadzab\"},{\"country\":\"Papua New Guinea\",\"airport\":\"Port Moresby Jacksons International Airport\",\"city\":\"Port Moresby\"}]"
+										}
+									]
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}
