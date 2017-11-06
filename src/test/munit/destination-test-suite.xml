@@ -38,7 +38,7 @@ payload]]></dw:set-payload>
         <munit:assert-payload-equals message="Test failure message: Expected payload did not come through" expectedValue="#[getResource('get-destination/db-response.json').asString().replaceAll('\\s+','')]" doc:name="Assert Payload"/>
         <munit:assert-true condition="#[message.outboundProperties['http.status']==200]" doc:name="Status is 200"/>
     </munit:test>
-    <munit:test name="GetDestination-404NoResults" description="Test">
+    <munit:test name="GetDestination-404NoResults" description="Test" ignore="true">
         <mock:when messageProcessor="db:select" doc:name="GetDestination-DB-Mock">
             <mock:with-attributes>
                 <mock:with-attribute name="doc:name" whereValue="#['GetDestinationByAirline-DB']"/>
