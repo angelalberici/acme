@@ -34,7 +34,7 @@ payload map {
         "price":  $.price,
         "destination_airport":  $.destination_airport,
         "flight_code":  $.flight_code,
-        "departure_date":  $.departure_date as :datetime {format: "yyyy-MM-dd"} as :string {format: "yyyy-MM-dd"}  when ($.departure_date != null) otherwise '',
+        "departure_date":  $.departure_date as :datetime {format: "yyyy-MM-dd HH:mm:ss"} as :string {format: "yyyy-MM-dd HH:mm:ss"}  when ($.departure_date != null) otherwise '',
         "seat_availability":  $.seat_availability,
         "aircraft_type":  $.aircraft_type,
         "departure_airport":  $.departure_airport

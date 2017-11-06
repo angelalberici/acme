@@ -63,10 +63,10 @@ WHERE Flight_Code = '#[message.inboundProperties['http.uri.params'].flightId]' A
 ---
 payload]]></dw:set-payload>
         </dw:transform-message>
-        <logger message="[CreateFlight-SubFlow] - INSERT INTO airlines_sandbox.flights_a_alberici(Flight_Code, Airline_Name, Departure_Airport, Destination_Airport, Departure_Date, Aircraft_Type, Seat_Availability, Price) VALUES (#[payload.'flight-code'],       #[payload.airline],       #[payload.'departure-aiport'],       #[payload.'desitnation-airport'],       #[payload.'departure-date'],       #[payload.'aircraft-model'],       #[payload.'seat-availability'],       #[payload.price]);" level="INFO" doc:name="DB Create"/>
+        <logger message="[CreateFlight-SubFlow] - INSERT INTO airlines_sandbox.flights_a_alberici(Flight_Code, Airline_Name, Departure_Airport, Destination_Airport, Departure_Date, Aircraft_Type, Seat_Availability, Price) VALUES (#[payload.'flight_code'],       #[payload.airline],       #[payload.'departure_aiport'],       #[payload.'desitnation_airport'],       #[payload.'departure_date'],       #[payload.'aircraft_model'],       #[payload.'seat_availability'],       #[payload.price]);" level="INFO" doc:name="DB Create"/>
         <db:insert config-ref="MySQL_AcmeTravel_Conf" doc:name="UpdateFlight-DB">
             <db:parameterized-query><![CDATA[INSERT INTO airlines_sandbox.flights_a_alberici(Flight_Code, Airline_Name, Departure_Airport, Destination_Airport, Departure_Date, Aircraft_Type, Seat_Availability, Price) 
-VALUES (#[payload.'flight-code'],       #[payload.airline],       #[payload.'departure-aiport'],       #[payload.'destination-airport'],       #[payload.'departure-date'],       #[payload.'aircraft-model'],       #[payload.'seat-availability'],       #[payload.price])]]></db:parameterized-query>
+VALUES (#[payload.'flight_code'],       #[payload.airline],       #[payload.'departure_aiport'],       #[payload.'destination_airport'],       #[payload.'departure_date'],       #[payload.'aircraft_model'],       #[payload.'seat_availability'],       #[payload.price])]]></db:parameterized-query>
         </db:insert>
         <choice doc:name="Choice">
             <when expression="payload &gt; 0">

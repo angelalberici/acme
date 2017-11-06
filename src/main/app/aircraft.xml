@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+<mule xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:spring="http://www.springframework.org/schema/beans" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
@@ -8,10 +8,10 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
 http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
 http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
-http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd">
     <sub-flow name="GetAircraft-SubFlow">
         <set-variable variableName="model" value="%#[message.inboundProperties['http.query.params'].model]%" doc:name="model var"/>
-        <logger message="[GetRoutes-SubFlow-SubFlow] where DATE_FORMAT(Departure_Date, '%Y-%m-%d')=#[message.inboundProperties['http.query.params'].day];" level="INFO" doc:name="DB WHERE Clause"/>
         <dw:transform-message doc:name="Pagination Payload">
             <dw:set-payload><![CDATA[%dw 1.0
 %output application/java
@@ -24,7 +24,13 @@ inboundProperties."http.query.params".page * inboundProperties."http.query.param
 inboundProperties."http.query.params".records-per-page
 ]]></dw:set-payload>
         </dw:transform-message>
-        <logger message="SELECT	ICAO_Code as icao,	IATA_Code as iata, Model as model FROM airlines_sandbox.aircraft_type where 1==1 #[payload]" level="INFO" doc:name="Logger"/>
+        <scripting:component doc:name="Negative page or records">
+            <scripting:script engine="Groovy"><![CDATA[if( payload.contains('-') )
+throw new org.mule.module.apikit.exception.BadRequestException('')
+else 
+return payload]]></scripting:script>
+        </scripting:component>
+        <logger message="[GetAircraft-SubFlow] - SELECT ICAO_Code as icao, IATA_Code as iata, Model as model FROM airlines_sandbox.aircraft_type where 1==1 #[payload]" level="INFO" doc:name="GetRoutes-DB"/>
         <db:select config-ref="MySQL_AcmeTravel_Conf" doc:name="GetRoutes-DB">
             <db:dynamic-query><![CDATA[SELECT
 	ICAO_Code as icao,

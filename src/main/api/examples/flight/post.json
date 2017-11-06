@@ -1,10 +1,10 @@
 {
-		"flight-code" : "AN001",
+		"flight_code" : "AN111",
         "airline": "British Airways",
-        "departure-aiport": "SYD",
-        "desitnation-airport": "CHC",
-        "departure-date" : "2017-03-15 08:45:00",
-        "aircraft-model" : "model",
-        "seat-availability" :  "",
+        "departure_aiport": "SYD",
+        "destination_airport": "CHC",
+        "departure_date" : "2017-03-17 08:45:00",
+        "aircraft_model" : "Boeing 737-900",
+        "seat_availability" :  10,
         "price" : 500
 }

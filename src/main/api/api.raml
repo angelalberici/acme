@@ -39,7 +39,7 @@ traits: !include ./traits.raml
         "200": 
           body: 
               application/json: 
-                  example: !include examples/get_flights/response.json                
+                  example: !include examples/routes/response.json                
 /aircrafts: 
     is: [secured, common_errors]     
     get:
@@ -62,7 +62,7 @@ traits: !include ./traits.raml
         "200": 
           body: 
               application/json: 
-                  example: !include examples/get_flights/response.json                  
+                  example: !include examples/aircraft/response.json                  
 /flight: 
     post:
         body: 
@@ -70,7 +70,7 @@ traits: !include ./traits.raml
                 example: !include ./examples/flight/post.json
                 schema: !include schemas/flight_post.json
         responses: 
-            "200":     
+            "204":     
     /{flightId}:
       is: [secured, common_errors]    
       uriParameters: 
@@ -82,7 +82,7 @@ traits: !include ./traits.raml
                   example: !include ./examples/flight/put.json
                   schema: !include schemas/flight_put.json
           responses: 
-              "200":   
+              "204":   
 /destination:         
         is: [secured, common_errors]          
         get:

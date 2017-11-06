@@ -41,8 +41,8 @@ where rout.Airline_ID = airl.Airline_ID
 ---
 payload map {	
 	    "airline": $.name,
-        "departure-aiport":  $.departure-airport,
-        "destination-airport":  $.destination-airport
+        "departure_aiport":  $.departure-airport,
+        "destination_airport":  $.destination-airport
 }]]></dw:set-payload>
         </dw:transform-message>
         <choice doc:name="Choice">

@@ -1,10 +1,20 @@
 [
     {
         "airline_name": "British Airways",
+        "price": 500,
+        "destination_airport": "CHC",
+        "flight_code": "AN002",
+        "departure_date": "2017-03-15 08:45:00",
+        "seat_availability": 10,
+        "aircraft_type": "Boeing 737-900",
+        "departure_airport": "SYD"
+    },
+    {
+        "airline_name": "British Airways",
         "price": 1400,
         "destination_airport": "LCY",
         "flight_code": "BA001",
-        "departure_date": "2017-03-15",
+        "departure_date": "2017-03-15 20:30:00",
         "seat_availability": 32,
         "aircraft_type": "Airbus A318",
         "departure_airport": "JFK"
@@ -14,7 +24,7 @@
         "price": 452.18,
         "destination_airport": "JFK",
         "flight_code": "BA105",
-        "departure_date": "2017-03-15",
+        "departure_date": "2017-03-15 06:30:00",
         "seat_availability": 463,
         "aircraft_type": "Boeing 747-400",
         "departure_airport": "LHR"
@@ -24,7 +34,7 @@
         "price": 452.18,
         "destination_airport": "SFO",
         "flight_code": "BA285",
-        "departure_date": "2017-03-15",
+        "departure_date": "2017-03-15 10:40:00",
         "seat_availability": 635,
         "aircraft_type": "Boeing 747-400",
         "departure_airport": "LHR"
@@ -34,7 +44,7 @@
         "price": 400,
         "destination_airport": "CHC",
         "flight_code": "EK412",
-        "departure_date": "2017-03-15",
+        "departure_date": "2017-03-15 08:45:00",
         "seat_availability": 360,
         "aircraft_type": "Boeing 777-300ER",
         "departure_airport": "SYD"
@@ -44,7 +54,7 @@
         "price": 44.2,
         "destination_airport": "LTN",
         "flight_code": "FR3883",
-        "departure_date": "2017-03-15",
+        "departure_date": "2017-03-15 11:45:00",
         "seat_availability": 189,
         "aircraft_type": "Boeing 737-800",
         "departure_airport": "MLA"
@@ -54,7 +64,7 @@
         "price": 129,
         "destination_airport": "LGW",
         "flight_code": "KM116",
-        "departure_date": "2017-03-15",
+        "departure_date": "2017-03-15 08:40:00",
         "seat_availability": 123,
         "aircraft_type": "Airbus A319",
         "departure_airport": "MLA"
@@ -64,7 +74,7 @@
         "price": 685,
         "destination_airport": "LOS",
         "flight_code": "KM587",
-        "departure_date": "2017-03-15",
+        "departure_date": "2017-03-15 20:45:00",
         "seat_availability": 333,
         "aircraft_type": "Airbus A330 all models",
         "departure_airport": "AMS"
@@ -74,7 +84,7 @@
         "price": 197,
         "destination_airport": "FRA",
         "flight_code": "LH963",
-        "departure_date": "2017-03-15",
+        "departure_date": "2017-03-15 12:40:00",
         "seat_availability": 144,
         "aircraft_type": "Airbus A320",
         "departure_airport": "EDI"
@@ -84,7 +94,7 @@
         "price": 308.6,
         "destination_airport": "LGW",
         "flight_code": "TK1981",
-        "departure_date": "2017-03-15",
+        "departure_date": "2017-03-15 08:05:00",
         "seat_availability": 215,
         "aircraft_type": "Boeing 737-900",
         "departure_airport": "IST"

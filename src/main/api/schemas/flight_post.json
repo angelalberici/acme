@@ -5,19 +5,19 @@
       "type": "integer",
       "minimum": 0
     },
-    "flight-code": {
+    "flight_code": {
       "type": "string"
     },
     "airline": {
       "type": "string"
     },
-    "departure-aiport": {
+    "departure_aiport": {
       "type": "string"
     },
-    "destination-airport": {
+    "destination_airport": {
       "type": "string"
     },
-    "aircraft-model": {
+    "aircraft_model": {
       "type": "string"
     },
     "seats_availability": {
@@ -28,7 +28,7 @@
       "type": "number",
       "minimum": 0
     },
-    "departure-date": {
+    "departure_date": {
       "type": "string",
       "format": "string",
 	  "pattern" : "^[0-9]{4}-[0-1]{1}[0-9]{1}-[0-3]{1}[0-9]{1} [0-2]{1}[0-9]{1}:[0-6]{1}[0-9]{1}:[0-6]{1}[0-9]{1}(,)*$"    
@@ -36,13 +36,13 @@
     }
   },
     "required": [
-				"flight-code",
+				"flight_code",
               "airline",
-              "departure-aiport",
-              "destination-airport",
-              "departure-date",
-              "aircraft-model",
-              "seat-availability",
+              "departure_aiport",
+              "destination_airport",
+              "departure_date",
+              "aircraft_model",
+              "seat_availability",
               "price"
 			]
 }
